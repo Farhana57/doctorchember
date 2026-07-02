@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoctorChamber Professional Design</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+    
+    body {
+        cursor: none !important;
+        transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    /* লাইট মোড (ডিফল্ট) */
+    body {
+        background-color: #ffffff;
+        color: #130685c9;
+    }
+
+    /* ডার্ক মোড অ্যাক্টিভ হলে */
+    .dark body {
+        background-color: #050f33; /* আপনার পছন্দের গাঢ় নীল */
+        color: #ffffff;
+    }
+        .dark {
+        color: rgb(4, 19, 156);
+    }
+    /* মোবাইল ডিভাইসের জন্য প্যাডিং অ্যাডজাস্টমেন্ট */
+    @media (max-width: 768px) {
+        body {
+            padding-top: 80px;
+        }
+    }
+    .cursor-ring {
+    position: fixed;
+    border: 2px solid #fbbf24; /* Amber-400 */
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    /* আপনার দেওয়া ট্রানজিশন */
+    transition: transform 0.1s ease;
+    transform: translate(-50%, -50%);
+}
+   
+</style>
+    <script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        colors: {
+          clifford: '#da373d',
+        }
+      }
+    }
+  }
+</script>
+</head>
+    <body class="bg-white dark:bg-[#031b64] transition-colors duration-300">
+      <header class="fixed top-4 inset-x-4 z-50">
+    <div class="max-w-[1200px] mx-auto bg-[#08164bd8] border border-blue-900/50 rounded-[30px] shadow-2xl backdrop-blur-md px-6 py-3">
+        <div class="flex items-center justify-between gap-6">
+            <a href="#" class="text-xl font-black text-white">doctor<span class="text-amber-400">chamber</span>.com</a>
+            
+            <div class="relative hidden lg:block flex-1 max-w-sm">
+                <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-blue-400 text-xs"></i>
+                <input type="text" placeholder="What can we help you treat today?" class="w-full bg-blue-950 text-white rounded-full py-2 pl-10 pr-4 text-xs border border-blue-800 outline-none focus:border-amber-400 transition-colors">
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="login.html" class="text-white text-xs font-bold uppercase hover:text-amber-400 transition-colors">Log in ▾</a>
+                <button id="themeToggle" class="text-amber-400 hover:rotate-90 transition-transform duration-300"><i class="fa-solid fa-gear"></i></button>
+                <a href="seeadoctor.html" class="bg-amber-400 text-black px-5 py-2 rounded-full font-bold text-xs uppercase hover:bg-amber-500 transition-all">See a doctor</a>
+                <button id="mobileMenuBtn" class="lg:hidden text-white text-xl"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+
+        <nav class="hidden lg:flex justify-start gap-8 text-white font-bold text-[10px] uppercase mt-4 pl-2">
+    
+    <!-- What We Offer Dropdown -->
+    <div class="group relative">
+        <a href="#" class="hover:text-amber-400 transition-colors py-2 block">What We Offer ▾</a>
+        <div class="absolute left-0 top-full pt-2 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300">
+            <div class="bg-[#1f166ede] border border-amber-500 p-4 w-40 rounded-2xl shadow-xl">
+                <a href="urgent-care.html" class="block py-2 hover:text-amber-400 transition">Urgent Care</a>
+                <a href="mental-health.html" class="block py-2 hover:text-amber-400 transition">Mental Health</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Who We Serve Dropdown -->
+    <div class="group relative">
+        <a href="#" class="hover:text-amber-400 transition-colors py-2 block">Who We Serve ▾</a>
+        <div class="absolute left-0 top-full pt-2 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300">
+            <div class="bg-[#1f166ede] border border-amber-500 p-4 w-40 rounded-2xl shadow-xl">
+                <a href="individuals.html" class="block py-2 hover:text-amber-400 transition">Individuals</a>
+                <a href="employers.html" class="block py-2 hover:text-amber-400 transition">Employers</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fixed Links -->
+    <a href="index.html" class="hover:text-amber-400 transition py-2">Home</a>
+    <a href="customers.html" class="hover:text-amber-400 transition py-2">Customers</a>
+    <a href="Resources.html" class="hover:text-amber-400 transition py-2">Resources</a>
+    <a href="contact.html" class="hover:text-amber-400 transition py-2">Contact Us</a>
+</nav>
+    </div>
+</header>
+
+<section class="max-w-[1200px] mx-auto px-6 pt-32 pb-2">
+    <div class="bg-[#031553] border border-blue-900/50 rounded-[30px] p-6 lg:p-8 flex flex-col lg:flex-row items-center shadow-2xl text-white transition-colors duration-300">
+        
+        <div class="flex-1 w-full lg:border-r border-blue-900 lg:pr-8 mb-6 lg:mb-0">
+            <h3 class="text-[10px] font-bold text-amber-300 mb-2 tracking-widest uppercase">Insurance Coverage</h3>
+            <p class="text-sm mb-4">Check if your insurance covers virtual visits</p>
+            <div class="flex gap-2">
+                <input type="text" placeholder="Choose your provider" class="cursor-pointer bg-blue-950 p-3 rounded-lg w-full text-xs border border-blue-700 focus:outline-none focus:border-amber-400 transition-all">
+                <button class="cursor-pointer bg-amber-400 text-black px-6 py-2 rounded-lg font-bold text-xs whitespace-nowrap hover:bg-amber-500 transition-all duration-300">CHECK ELIGIBILITY</button>
+            </div>
+        </div>
+
+        <div class="flex w-full lg:w-1/2 justify-between items-center text-center px-8">
+            <div><h4 class="text-2xl font-bold">95M+</h4><p class="text-[10px] text-blue-400 uppercase">Members</p></div>
+            <div><h4 class="text-2xl font-bold">10 min</h4><p class="text-[10px] text-blue-400 uppercase">Avg Wait</p></div>
+            <div><h4 class="text-2xl font-bold">4.9★</h4><p class="text-[10px] text-blue-400 uppercase">Rating</p></div>
+        </div>
+    </div>
+</section>
+<!-- News Ticker -->
+<div class="bg-amber-400 text-black py-2 overflow-hidden whitespace-nowrap">
+    <div class="inline-block animate-marquee font-bold">
+        <span class="mx-4"><i class="fa-solid fa-circle-exclamation"></i> Seasonal Flu Alert: Get your vaccines today!</span>
+        <span class="mx-4"><i class="fa-solid fa-circle-info"></i> New: 24/7 tele-medicine support now available.</span>
+        <span class="mx-4"><i class="fa-solid fa-star"></i> Check our latest health tips section!</span>
+    </div>
+</div>
+
+<style>
+    @keyframes marquee { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+    .animate-marquee { animation: marquee 20s linear infinite; }
+</style>
+<!-- সেকশনটি এখন dark মোড সাপোর্ট করবে -->
+<section class="bg-[#031968e7] dark:bg-blue-500 w-full py-20 px-6 overflow-hidden relative transition-colors duration-300">
+    
+    <!-- ব্যাকগ্রাউন্ডের কার্ভ ডিজাইন (ডার্ক মোডে রঙ পরিবর্তন হবে) -->
+    <div class="absolute top-0 left-0 w-[45%] h-full bg-[#0a1540] dark:bg-[#0e0449] rounded-r-[100px] -z-0 transition-colors duration-300"></div>
+
+    <div class="max-w-[1200px] mx-auto flex flex-col lg:flex-row items-center gap-16 relative z-10">
+        
+        <!-- বাম পাশের টেক্সট কন্টেন্ট -->
+        <div class="w-full lg:w-1/2 text-white">
+            <h1 class="text-5xl font-extrabold mb-6 leading-tight dark-blue:text-gray-100">
+                Your partner in <br> 
+                <span class="text-[#FFB900]">care delivery</span>
+            </h1>
+            <p class="text-blue-200 dark:text-gray-400 text-lg mb-8 max-w-sm">One platform for care that's accessible, affordable, and effective.</p>
+            
+            <a href="contact.html" class="bg-[#FFB900] text-black px-8 py-4 rounded-xl font-bold flex items-center gap-2 hover:bg-amber-500 transition-all w-fit">
+    Connect with our team <span>&gt;</span>
+</a>
+        </div>
+
+       <div class="w-full lg:w-1/2 flex justify-center items-center relative py-10">
+    
+    <div class="absolute w-[450px] h-[450px] border border-amber-500 rounded-full flex items-center justify-center opacity-50 animate-spin-slow">
+        <div class="w-[350px] h-[350px] border border-blue-700 rounded-full"></div>
+    </div>
+
+    <div class="relative w-[320px] h-[320px] rounded-full border-4 border-amber-500 overflow-hidden shadow-2xl z-10 transition-all duration-500 hover:scale-105 hover:shadow-amber-500/50 animate-float">
+        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=500" class="w-full h-full object-cover transition-transform duration-700 hover:scale-110" alt="Doctor">
+    </div>
+
+    <div class="absolute bottom-16 right-16 w-[100px] h-[100px] rounded-full border-4 border-[#050f33] overflow-hidden shadow-2xl z-20 transition-all duration-500 hover:scale-110 hover:border-amber-400 animate-float-delay">
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200" class="w-full h-full object-cover" alt="Patient">
+    </div>
+    
+    <div class="absolute top-10 right-20 z-30 bg-[#02035a] border border-amber-500/50 text-white text-xs font-bold px-4 py-1 rounded-full shadow-lg hover:bg-amber-500 hover:text-black transition-colors duration-300">
+        Convenient
+    </div>
+</div>
+        </div>
+    </div>
+</section>
+      <div class="py-10 border-y border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-[#050f33]/50 overflow-hidden">
+    <p class="text-center text-gray-500 dark:text-blue-300 font-medium mb-8">
+        Trusted by top healthcare companies across the globe
+    </p>
+    
+    <!-- স্লাইডিং কন্টেইনার -->
+    <div class="animate-scroll gap-16">
+        <!-- লোগোর আইকন বা ইমেজ (লিস্ট দ্বিগুণ করতে হবে যেন গ্যাপ না থাকে) -->
+        <div class="flex gap-16">
+            <div class="flex items-center grayscale hover:grayscale-0"><i class="fa-solid fa-hospital text-3xl"></i><span class="ml-2 font-bold">Partner 1</span></div>
+            <div class="flex items-center grayscale hover:grayscale-0"><i class="fa-solid fa-heart-pulse text-3xl"></i><span class="ml-2 font-bold">Partner 2</span></div>
+            <div class="flex items-center grayscale hover:grayscale-0"><i class="fa-solid fa-shield-halved text-3xl"></i><span class="ml-2 font-bold">Partner 3</span></div>
+            <div class="flex items-center grayscale hover:grayscale-0"><i class="fa-solid fa-notes-medical text-3xl"></i><span class="ml-2 font-bold">Partner 4</span></div>
+            <div class="flex items-center grayscale hover:grayscale-0"><i class="fa-solid fa-user-doctor text-3xl"></i><span class="ml-2 font-bold">Partner 5</span></div>
+            <div class="flex items-center grayscale hover:grayscale-0"><i class="fa-solid fa-pills text-3xl"></i><span class="ml-2 font-bold">Partner 6</span></div>
+        </div>
+        
+        <!-- লুপের জন্য কপি -->
+        <div class="flex gap-16">
+            <div class="flex items-center grayscale hover:grayscale-0"><i class="fa-solid fa-hospital text-3xl"></i><span class="ml-2 font-bold">Partner 1</span></div>
+            <div class="flex items-center grayscale hover:grayscale-0"><i class="fa-solid fa-heart-pulse text-3xl"></i><span class="ml-2 font-bold">Partner 2</span></div>
+            <div class="flex items-center grayscale hover:grayscale-0"><i class="fa-solid fa-shield-halved text-3xl"></i><span class="ml-2 font-bold">Partner 3</span></div>
+            <div class="flex items-center grayscale hover:grayscale-0"><i class="fa-solid fa-notes-medical text-3xl"></i><span class="ml-2 font-bold">Partner 4</span></div>
+            <div class="flex items-center grayscale hover:grayscale-0"><i class="fa-solid fa-user-doctor text-3xl"></i><span class="ml-2 font-bold">Partner 5</span></div>
+            <div class="flex items-center grayscale hover:grayscale-0"><i class="fa-solid fa-pills text-3xl"></i><span class="ml-2 font-bold">Partner 6</span></div>
+        </div>
+    </div>
+</div>
+<section class="py-12 bg-white dark:bg-[#040918]">
+    <div class="max-w-[1000px] mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div class="p-4">
+            <h3 class="text-3xl md:text-4xl font-black text-amber-500">50k+</h3>
+            <p class="text-gray-600 dark:text-blue-200 mt-2 font-medium">Happy Patients</p>
+        </div>
+        <div class="p-4">
+            <h3 class="text-3xl md:text-4xl font-black text-amber-500">200+</h3>
+            <p class="text-gray-600 dark:text-blue-200 mt-2 font-medium">Expert Doctors</p>
+        </div>
+        <div class="p-4">
+            <h3 class="text-3xl md:text-4xl font-black text-amber-500">24/7</h3>
+            <p class="text-gray-600 dark:text-blue-200 mt-2 font-medium">Live Support</p>
+        </div>
+        <div class="p-4">
+            <h3 class="text-3xl md:text-4xl font-black text-amber-500">99%</h3>
+            <p class="text-gray-600 dark:text-blue-200 mt-2 font-medium">Satisfaction</p>
+        </div>
+    </div>
+</section>
+<!-- How It Works Section -->
+<section class="py-20 bg-gray-50 dark:bg-[#040918]">
+    <div class="max-w-[1100px] mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-2xl md:text-3xl font-black text-gray-900 dark:text-white mb-4">How It Works</h2>
+            <p class="text-gray-600 dark:text-blue-200">Get quality care in three simple steps.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-10">
+            <!-- Step 1 -->
+            <div class="text-center group">
+                <div class="w-20 h-20 bg-amber-400/10 text-amber-500 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl font-bold border-2 border-amber-500 transition-all duration-300 group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-white">
+                    01
+                </div>
+                <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">Register Online</h3>
+                <p class="text-gray-600 dark:text-blue-200 text-sm">Create your account in seconds and fill in your basic health profile.</p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="text-center group">
+                <div class="w-20 h-20 bg-amber-400/10 text-amber-500 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl font-bold border-2 border-amber-500 transition-all duration-300 group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-white">
+                    02
+                </div>
+                <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">Consult Doctor</h3>
+                <p class="text-gray-600 dark:text-blue-200 text-sm">Connect with our top-tier specialists via video or chat instantly.</p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="text-center group">
+                <div class="w-20 h-20 bg-amber-400/10 text-amber-500 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl font-bold border-2 border-amber-500 transition-all duration-300 group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-white">
+                    03
+                </div>
+                <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">Get Treatment</h3>
+                <p class="text-gray-600 dark:text-blue-200 text-sm">Receive your personalized prescription and health reports directly.</p>
+            </div>
+        </div>
+    </div>
+</section>
+    <section class="max-w-[1200px] mx-auto py-16 px-6">
+    <div class="text-center mb-12">
+        <h3 class="text-amber-500 text-xs font-bold uppercase tracking-widest mb-5">Our Capabilities</h3>
+        <h2 class="text-3xl font-bold text-amber-500">All the care you need, all in one place</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <div class="bg-[#050f33] p-8 rounded-3xl border border-blue-800 shadow-lg hover:shadow-2xl hover:shadow-blue-900/50 transition-all duration-300 hover:-translate-y-2 cursor-pointer">
+            <div class="text-blue-400 text-3xl mb-6"><i class="fa-solid fa-clock-rotate-left"></i></div>
+            <h4 class="text-white font-bold text-lg mb-3">24/7 Urgent Care</h4>
+            <p class="text-blue-200 text-xs leading-relaxed mb-6">Connect within minutes for common conditions like cold, flu, allergies, and fevers.</p>
+            <a href="#" class="text-amber-400 font-bold text-xs hover:underline">Find care now →</a>
+        </div>
+
+        <div class="bg-[#050f33] p-8 rounded-3xl border border-blue-800 shadow-lg hover:shadow-2xl hover:shadow-blue-900/50 transition-all duration-300 hover:-translate-y-2 cursor-pointer">
+            <div class="text-blue-400 text-3xl mb-6"><i class="fa-solid fa-brain"></i></div>
+            <h4 class="text-white font-bold text-lg mb-3">Mental Healthcare</h4>
+            <p class="text-blue-200 text-xs leading-relaxed mb-6">Talk therapy, psychiatry, and ongoing support for stress, anxiety, and depression.</p>
+            <a href="#" class="text-amber-400 font-bold text-xs hover:underline">Meet a therapist →</a>
+        </div>
+
+        <div class="bg-[#050f33] p-8 rounded-3xl border border-blue-800 shadow-lg hover:shadow-2xl hover:shadow-blue-900/50 transition-all duration-300 hover:-translate-y-2 cursor-pointer">
+            <div class="text-blue-400 text-3xl mb-6"><i class="fa-solid fa-user-doctor"></i></div>
+            <h4 class="text-white font-bold text-lg mb-3">Primary Care</h4>
+            <p class="text-blue-200 text-xs leading-relaxed mb-6">Routine checkups, wellness screenings, and general preventive health management.</p>
+            <a href="#" class="text-amber-400 font-bold text-xs hover:underline">Schedule a checkup →</a>
+        </div>
+
+        <div class="bg-[#050f33] p-8 rounded-3xl border border-blue-800 shadow-lg hover:shadow-2xl hover:shadow-blue-900/50 transition-all duration-300 hover:-translate-y-2 cursor-pointer">
+            <div class="text-blue-400 text-3xl mb-6"><i class="fa-solid fa-heart-pulse"></i></div>
+            <h4 class="text-white font-bold text-lg mb-3">Condition Control</h4>
+            <p class="text-blue-200 text-xs leading-relaxed mb-6">Personalized programs to manage hypertension, diabetes, and healthy weight care.</p>
+            <a href="#" class="text-amber-400 font-bold text-xs hover:underline">Learn more →</a>
+        </div>
+
+    </div>
+</section>
+<!-- Comparison Table -->
+<section class="py-20 max-w-[900px] mx-auto px-6">
+    <h2 class="text-3xl font-black text-center mb-12 dark:text-white">Why Choose DoctorChamber?</h2>
+    <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse rounded-2xl overflow-hidden shadow-xl">
+            <thead>
+                <tr class="bg-blue-900 text-white">
+                    <th class="p-6">Features</th>
+                    <th class="p-6 text-center text-amber-400">DoctorChamber</th>
+                    <th class="p-6 text-center text-gray-400">Common Clinics</th>
+                </tr>
+            </thead>
+            <tbody class="bg-white dark:bg-[#0a1540] dark:text-blue-200">
+                <tr class="border-b dark:border-blue-900">
+                    <td class="p-6 font-bold">24/7 Availability</td>
+                    <td class="p-6 text-center text-green-500">✓</td>
+                    <td class="p-6 text-center text-red-500">✕</td>
+                </tr>
+                <tr class="border-b dark:border-blue-900">
+                    <td class="p-6 font-bold">Online Consultations</td>
+                    <td class="p-6 text-center text-green-500">✓</td>
+                    <td class="p-6 text-center text-red-500">✕</td>
+                </tr>
+                <tr>
+                    <td class="p-6 font-bold">Personalized Care</td>
+                    <td class="p-6 text-center text-green-500">✓</td>
+                    <td class="p-6 text-center text-red-500">Limited</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+     <section class="bg-white dark:bg-[#050f33] py-20 px-6 transition-colors duration-300">
+    <div class="max-w-[1000px] mx-auto text-gray-900 dark:text-white">
+        <div class="mb-12">
+            <h2 class="text-4xl font-bold mb-4">The Power of <span class="text-amber-500">DoctorChamber</span> <br> Ecosystem meets <span class="text-gray-600 dark:text-amber-400">DoctorChamber</span> Clinical Reach</h2>
+            <p class="text-gray-600 dark:text-blue-200">We don't just build another medical portal, we integrated the robust, secure, and cloud-enabled enterprise infrastructure of Amwell with the rapid, on-demand clinical network backed by Teladoc Health.</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-4 mb-12">
+            <!-- প্রতিটি কার্ডে dark:bg এবং dark:border যোগ করা হয়েছে -->
+            <div class="flex items-center gap-3 bg-gray-300 dark:bg-[#0a1540] p-4 rounded-lg border border-gray-200 dark:border-blue-800 transition-colors">
+                <span class="text-emerald-600 dark:text-emerald-400">✓</span> DoctorChamber™ Care Integrity Security
+            </div>
+            <div class="flex items-center gap-3 bg-gray-300 dark:bg-[#0a1540] p-4 rounded-lg border border-gray-200 dark:border-blue-800 transition-colors">
+                <span class="text-emerald-600 dark:text-emerald-400">✓</span> Doctors-Regina Routing (Web-sort)
+            </div>
+            <div class="flex items-center gap-3 bg-gray-300 dark:bg-[#0a1540] p-4 rounded-lg border border-gray-200 dark:border-blue-800 transition-colors">
+                <span class="text-emerald-600 dark:text-emerald-400">✓</span> Doctors-based Behavioral Framework
+            </div>
+            <div class="flex items-center gap-3 bg-gray-300 dark:bg-[#0a1540] p-4 rounded-lg border border-gray-200 dark:border-blue-800 transition-colors">
+                <span class="text-emerald-600 dark:text-emerald-400">✓</span> Whole-Person Continuum Care
+            </div>
+        </div>
+        <button class="border border-blue-600 dark:border-blue-500 text-blue-700 dark:text-blue-300 px-8 py-3 rounded-xl hover:bg-blue-100 dark:hover:bg-blue-900 transition-all">
+            Explore Platform Architecture >
+        </button>
+    </div>
+</section>
+<section class="bg-white dark:bg-[#050f33] text-black dark:text-white transition-colors duration-300"></section>
+    <div class="max-w-[1000px] mx-auto bg-[#0a1540] p-7 rounded-2xl border border-blue-800">
+        <h3 class="text-white text-lg font-semibold mb-8">INFRASTRUCTURE INTEGRATION RATING</h3>
+        
+        <div class="mb-8">
+            <div class="flex justify-between text-white mb-2">
+                <span>DoctorChamber Platform Core</span>
+                <span class="text-emerald-400 font-bold">98.5% CONNECTIVITY</span>
+            </div>
+            <div class="w-full bg-blue-900 h-3 rounded-full overflow-hidden">
+                <div class="bg-emerald-500 h-full w-[98.5%] rounded-full"></div>
+            </div>
+        </div>
+
+        <div>
+            <div class="flex justify-between text-white mb-2">
+                <span>DoctorChamber Packet Protocol</span>
+                <span class="text-emerald-400 font-bold">99% EFFICIENCY</span>
+            </div>
+            <div class="w-full bg-blue-900 h-3 rounded-full overflow-hidden">
+                <div class="bg-emerald-500 h-full w-[99%] rounded-full"></div>
+            </div>
+        </div>
+
+        <p class="text-blue-300 text-sm mt-8 italic">
+            *Fully HIPAA & GDPR compliant framework utilizing scalable and robust RESTful API integration formats.
+        </p>
+    </div>
+</section>
+<section class="bg-white dark:bg-[#050f33] text-black dark:text-white transition-colors duration-300"></section>
+    <div class="max-w-[1000px] mx-auto text-center text-white">
+        <span class="text-amber-500 font-bold uppercase tracking-widest text-sm">Simple & Fast</span>
+        <h2 class="text-4xl font-bold mt-2 mb-12">How to get care with DoctorChamber</h2>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-[#0a1540] p-8 rounded-2xl border border-blue-800 transition-transform hover:scale-105">
+                <div class="bg-blue-900 w-12 h-12 flex items-center justify-center rounded-xl mx-auto mb-6 font-bold text-amber-400">01</div>
+                <h4 class="text-xl font-semibold mb-3">Create your account</h4>
+                <p class="text-blue-200 text-sm">Tell us about your policy, insurance, and your primary provider to check your potential ID super eligibility instantly.</p>
+            </div>
+            <div class="bg-[#0a1540] p-8 rounded-2xl border border-blue-800 transition-transform hover:scale-105">
+                <div class="bg-blue-900 w-12 h-12 flex items-center justify-center rounded-xl mx-auto mb-6 font-bold text-amber-400">02</div>
+                <h4 class="text-xl font-semibold mb-3">Request a visit</h4>
+                <p class="text-blue-200 text-sm">Select the type of care you need—Urgent Care, Mental Health, or Therapy—and choose your preferred video or phone call.</p>
+            </div>
+
+            <div class="bg-[#0a1540] p-8 rounded-2xl border border-blue-800 transition-transform hover:scale-105">
+                <div class="bg-blue-900 w-12 h-12 flex items-center justify-center rounded-xl mx-auto mb-6 font-bold text-amber-400">03</div>
+                <h4 class="text-xl font-semibold mb-3">Feel better instantly</h4>
+                <p class="text-blue-200 text-sm">Consult with a certified doctor, get an accurate diagnosis, and have recovery prescriptions sent directly to your local pharmacy.</p>
+            </div>
+        </div>
+
+        <a href="seeadoctor.html" class="inline-block mx-auto mt-12">
+    <button class="bg-amber-400 text-black font-bold px-8 py-4 rounded-xl hover:bg-amber-500 transition-all flex items-center gap-2">
+        <span>📅</span> BOOK MY FIRST VISIT NOW
+    </button>
+</a>
+    </div>
+</section>
+     <!-- Meet Our Experts Section -->
+   <section class="bg-white dark:bg-[#050f33] text-black dark:text-white transition-colors duration-300"></section>
+    <div class="max-w-[1000px] mx-auto">
+        <h2 class="text-3xl font-bold text-white mb-12 text-center">Meet Our Medical Experts</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+           <!-- ডাক্তার ১ -->
+        <div class="bg-[#0a1540] p-6 rounded-2xl border border-amber-500 text-center text-white shadow-xl transform hover:scale-[1.03] transition-all duration-300">
+            <div class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-amber-500 overflow-hidden cursor-pointer group">
+                <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZG9jdG9yfGVufDB8fDB8fHww" class="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform duration-300 group-hover:sepia group-hover:invert-0">
+            </div>
+            <h4 class="font-bold">Dr.Sarah Johnson</h4>
+            <p class="text-blue-400 text-sm">Cardiologist</p>
+        </div>
+
+        <!-- ডাক্তার ২ -->
+        <div class="bg-[#0a1540] p-6 rounded-2xl border border-amber-500 text-center text-white shadow-xl transform hover:scale-[1.03] transition-all duration-300">
+            <div class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-amber-500 overflow-hidden cursor-pointer group">
+                <img src="https://plus.unsplash.com/premium_photo-1673953510197-0950d951c6d9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8ZG9jdG9yfGVufDB8fDB8fHww" class="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform duration-300 group-hover:grayscale">
+            </div>
+            <h4 class="font-bold">Dr.Michael Chen</h4>
+            <p class="text-blue-400 text-sm">Neurologist</p>
+        </div>
+
+        <!-- ডাক্তার ৩ -->
+        <div class="bg-[#0a1540] p-6 rounded-2xl border border-amber-500 text-center text-white shadow-xl transform hover:scale-[1.03] transition-all duration-300">
+            <div class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-amber-500 overflow-hidden cursor-pointer group">
+                <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGRvY3RvcnxlbnwwfHwwfHx8MA%3D%3D" class="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform duration-300 group-hover:sepia group-hover:grayscale">
+            </div>
+            <h4 class="font-bold">Dr.Emily Davis</h4>
+            <p class="text-blue-400 text-sm">Pediatrician</p>
+        </div>
+
+        <!-- ডাক্তার ৪ -->
+        <div class="bg-[#0a1540] p-6 rounded-2xl border border-amber-500 text-center text-white shadow-xl transform hover:scale-[1.03] transition-all duration-300">
+            <div class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-amber-500 overflow-hidden cursor-pointer group">
+                <img src="https://media.istockphoto.com/id/1301595548/photo/female-doctor-stock-photo.webp?a=1&b=1&s=612x612&w=0&k=20&c=PW3Lbgi6F8DjYdKffpo6Uyo07ZBxw69utLcASzxX3b0=" class="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform duration-300 group-hover:sepia group-hover:invert">
+            </div>
+            <h4 class="font-bold">Dr.James Wilson</h4>
+            <p class="text-blue-400 text-sm">Oncologist</p>
+        </div>
+
+        <!-- ডাক্তার ৫ -->
+        <div class="bg-[#0a1540] p-6 rounded-2xl border border-amber-500 text-center text-white shadow-xl transform hover:scale-[1.03] transition-all duration-300">
+            <div class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-amber-500 overflow-hidden cursor-pointer group">
+                <img src="https://media.istockphoto.com/id/1319031310/photo/doctor-writing-a-medical-prescription.webp?a=1&b=1&s=612x612&w=0&k=20&c=NjsxMl8GGuQhGh5Pf1DMndLw4UoS2-lTLJuLpEeZvK8=" class="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform duration-300 group-hover:invert-0 group-hover:grayscale">
+            </div>
+            <h4 class="font-bold">Dr. Fatima Khan</h4>
+            <p class="text-blue-400 text-sm">Psychiatrist</p>
+        </div>
+        <!-- ডাক্তার ৬ -->
+        <div class="bg-[#0a1540] p-6 rounded-2xl border border-amber-500 text-center text-white shadow-xl transform hover:scale-[1.03] transition-all duration-300">
+            <div class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-amber-500 overflow-hidden cursor-pointer group">
+                <img src="https://plus.unsplash.com/premium_photo-1681843126728-04eab730febe?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGRvY3RvcnxlbnwwfHwwfHx8MA%3D%3D" class="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform duration-300 group-hover:sepia-0 group-hover:invert">
+            </div>
+            <h4 class="font-bold">Dr. David Lee</h4>
+            <p class="text-blue-400 text-sm">General Practitioner</p>
+        </div>
+    </div>
+</div>
+</div>
+ </div>
+</section>
+<!-- Video Strategy Section -->
+<section class="bg-white dark:bg-[#050f33] text-black dark:text-white transition-colors duration-300"></section>
+    <div class="max-w-[1000px] mx-auto flex flex-col lg:flex-row items-center gap-12">
+        <!-- বামদিকের টেক্সট -->
+        <div class="lg:w-1/2">
+            <h2 class="text-3xl font-bold mb-6">Strategies for connected <span class="text-amber-500">patient-centered experiences</span></h2>
+            <ul class="space-y-4 mb-8">
+                <li class="flex items-start gap-3 text-amber-500"><span>➤</span> Bridging care gaps with monitoring, alerts, and actionable analytics teams.</li>
+                <li class="flex items-start gap-3 text-amber-500"><span>➤</span> The impact of digital care models with messaging and analytics improves outcomes for high-risk groups.</li>
+            </ul>
+            <a href="resources.html" class="inline-block">
+    <button class="bg-amber-400 text-black font-bold px-8 py-3 rounded-xl hover:bg-amber-500 transition-all">
+        WATCH THE WEBINAR 
+    </button>
+</a>
+        </div>
+        <!-- ডানদিকের ভিডিও প্লেয়ার থাম্বনেইল -->
+        <div class="lg:w-1/2 relative">
+            <div class="w-[300px] h-[300px] rounded-full border-4 border-amber-500 overflow-hidden flex items-center justify-center bg-black shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1590650153855-d9e808071d7d?w=500" alt="Video Thumbnail" class="w-full h-full object-cover opacity-60">
+                <div class="absolute text-5xl text-amber-400 cursor-pointer hover:scale-110 transition-transform">▶</div>
+            </div>
+        </div>
+    </div>
+</section>
+   <!-- Testimonials Section -->
+   <section class="bg-white dark:bg-[#050f33] text-black dark:text-white transition-colors duration-300"></section>
+    <div class="max-w-[800px] mx-auto text-center text-white">
+        <h2 class="text-3xl font-bold mb-12">What Our Patients Say</h2>
+        <div class="bg-[#0a1540] p-10 rounded-3xl border border-blue-900 shadow-xl">
+            <p class="text-lg italic text-blue-200 mb-6">"DoctorChamber saved me so much time. I got a diagnosis within 15 minutes and the prescription was sent directly to my pharmacy. Truly a life saver!"</p>
+            <div class="font-bold text-amber-400">— Amanda R., Patient</div>
+        </div>
+    </div>
+</section>
+<!-- FAQ Section -->
+<section class="bg-white dark:bg-[#040918] text-black dark:text-white transition-colors duration-300 py-10">
+    <div class="max-w-[800px] mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-10 text-center">Frequently Asked Questions</h2>
+        
+        <div class="space-y-4">
+            <!-- FAQ Item 1 -->
+            <details class="bg-gray-400 dark:bg-[#0a1540] p-5 rounded-xl border border-gray-200 dark:border-blue-800 transition-colors duration-300">
+                <summary class="font-bold cursor-pointer text-gray-900 dark:text-white transition-colors duration-300">
+                    What insurance plans do you accept?
+                </summary>
+                <p class="text-gray-700 dark:text-blue-200 mt-2 text-sm transition-colors duration-300">
+                    We accept most major insurance providers. Use our eligibility checker on the dashboard to confirm.
+                </p>
+            </details>
+
+            <!-- FAQ Item 2 -->
+            <details class="bg-gray-400 dark:bg-[#0a1540] p-5 rounded-xl border border-gray-200 dark:border-blue-800 transition-colors duration-300">
+                <summary class="font-bold cursor-pointer text-gray-900 dark:text-white transition-colors duration-300">
+                    Can I cancel my appointment?
+                </summary>
+                <p class="text-gray-700 dark:text-blue-200 mt-2 text-sm transition-colors duration-300">
+                    Yes, you can cancel or reschedule up to 2 hours before your session starts through your profile.
+                </p>
+            </details>
+        </div>
+    </div>
+</section>
+  <!-- Health Insights & Tips Section -->
+<section class="bg-white dark:bg-[#040918] py-16 transition-colors duration-300">
+    <div class="max-w-[1200px] mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-12 text-center text-gray-900 dark:text-white">Health Insights & Tips</h2>
+        
+        <!-- ৪টি কার্ডের গ্রিড -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            
+            <!-- কার্ড ১ -->
+            <div class="group bg-gray-100 dark:bg-[#0a1540] rounded-xl overflow-hidden border border-gray-200 dark:border-blue-900 transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:shadow-blue-500/20">
+                <img src="https://plus.unsplash.com/premium_photo-1661690177761-8d521bd794f9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fEhlYWx0aCUyMEluc2lnaHRzJTIwJTI2JTIwVGlwcyUyMGltYWdlfGVufDB8fDB8fHww" class="w-full h-40 object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="p-5">
+                    <h5 class="font-bold mb-2 text-gray-900 dark:text-white">Managing Stress</h5>
+                    <p class="text-gray-600 dark:text-blue-300 text-xs">Learn quick techniques to stay calm during busy office hours.</p>
+                </div>
+            </div>
+            <div class="group bg-gray-100 dark:bg-[#0a1540] rounded-xl overflow-hidden border border-gray-200 dark:border-blue-900 transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:shadow-blue-500/20">
+                <img src="https://images.unsplash.com/photo-1666886573230-2b730505f298?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8SGVhbHRoJTIwSW5zaWdodHMlMjAlMjYlMjBUaXBzJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D" class="w-full h-40 object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="p-5">
+                    <h5 class="font-bold mb-2 text-gray-900 dark:text-white">Managing Stress</h5>
+                    <p class="text-gray-600 dark:text-blue-300 text-xs">Learn quick techniques to stay calm during busy office hours.</p>
+                </div>
+            </div>
+           
+            <div class="group bg-gray-100 dark:bg-[#0a1540] rounded-xl overflow-hidden border border-gray-200 dark:border-blue-900 transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:shadow-blue-500/20">
+                <img src="https://media.istockphoto.com/id/1403199774/photo/doctor-near-patient-bed-advising-to-elderly-woman-at-hospital-concept-of-diagnosis-confidence.webp?a=1&b=1&s=612x612&w=0&k=20&c=mEJILR9RPj5OPnYeniwQ1Cr22SlqLTuQ0SpWBbpO-jk=" class="w-full h-40 object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="p-5">
+                    <h5 class="font-bold mb-2 text-gray-900 dark:text-white">Healthy Eating</h5>
+                    <p class="text-gray-600 dark:text-blue-300 text-xs">Simple habits to improve your daily nutrition easily.</p>
+                </div>
+            </div>
+
+            <div class="group bg-gray-100 dark:bg-[#0a1540] rounded-xl overflow-hidden border border-gray-200 dark:border-blue-900 transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:shadow-blue-500/20">
+                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Zml0bmVzc3xlbnwwfHwwfHx8MA%3D%3D" class="w-full h-40 object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="p-5">
+                    <h5 class="font-bold mb-2 text-gray-900 dark:text-white">Better Sleep</h5>
+                    <p class="text-gray-600 dark:text-blue-300 text-xs">Tips to get high quality sleep for a better tomorrow.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Contact/Location Section -->
+<section class="bg-white dark:bg-[#040918] py-16 transition-colors duration-300">
+    <div class="max-w-[1000px] mx-auto px-6">
+        <h3 class="text-3xl font-bold mb-10 text-center text-gray-900 dark:text-white">Visit Our Headquarters</h3>
+        
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            
+            <!-- ইনফরমেশন কার্ড -->
+            <div class="bg-gray-100 dark:bg-[#0a1540] p-8 rounded-2xl border border-gray-200 dark:border-blue-900 shadow-lg">
+                <p class="text-gray-600 dark:text-blue-200 font-medium">Sylhet, Bangladesh Office</p>
+                <h4 class="font-bold text-2xl text-blue-900 dark:text-amber-400 mt-2">UpToTechSyl Digital Agency</h4>
+                
+                <div class="mt-6 space-y-4">
+                    <p class="text-sm text-gray-700 dark:text-white">
+                        <span class="block font-semibold">Address:</span>
+                        Sylhet City, Bangladesh
+                    </p>
+                    <p class="text-sm text-gray-700 dark:text-white">
+                        <span class="block font-semibold">Immediate inquiries:</span>
+                        <a href="tel:01759945057" class="hover:text-blue-500 transition-colors">01759945057</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Google Map Placeholder -->
+            <div class="w-full h-[300px] rounded-2xl overflow-hidden border-4 border-gray-100 dark:border-[#0a1540] shadow-xl">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.664426543886!2d91.8687!3d24.8949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3751ab2a731d7e29%3A0x6b406b29e00192e2!2sSylhet!5e0!3m2!1sen!2sbd!4v1619856723456!5m2!1sen!2sbd" 
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+            
+        </div>
+    </div>
+</section>
+<section class="py-10 bg-gray-50 dark:bg-[#050f33]">
+    <div class="max-w-[1000px] mx-auto px-6 flex flex-wrap justify-center items-center gap-10">
+        <div class="flex items-center gap-2 text-gray-500 dark:text-blue-300">
+            <i class="fa-solid fa-shield-halved text-2xl text-emerald-500"></i>
+            <span class="font-bold text-sm">HIPAA Compliant</span>
+        </div>
+        <div class="flex items-center gap-2 text-gray-500 dark:text-blue-300">
+            <i class="fa-solid fa-certificate text-2xl text-blue-500"></i>
+            <span class="font-bold text-sm">ISO Certified</span>
+        </div>
+        <div class="flex items-center gap-2 text-gray-500 dark:text-blue-300">
+            <i class="fa-solid fa-lock text-2xl text-amber-500"></i>
+            <span class="font-bold text-sm">Secure SSL</span>
+        </div>
+    </div>
+</section>
+
+   <!-- Footer Section -->
+<footer class="bg-[#030821] pt-16 pb-8 px-6 text-white border-t border-blue-900">
+    <div class="max-w-[1200px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+        
+        <!-- লোগো ও সোশ্যাল -->
+        <div class="col-span-2 md:col-span-1">
+            <h1 class="text-2xl font-bold mb-4">doctorchamber<span class="text-amber-400">.com</span></h1>
+            <div class="flex gap-4">
+                <a href="#" class="w-8 h-8 bg-amber-500 rounded-full flex items-center justify-center hover:bg-amber-400 transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="w-8 h-8 bg-amber-500 rounded-full flex items-center justify-center hover:bg-amber-400 transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" class="w-8 h-8 bg-amber-500 rounded-full flex items-center justify-center hover:bg-amber-400 transition-colors"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+            <p class="mt-6 text-sm text-blue-200">UpToTechSyl Digital Agency<br>Sylhet, Bangladesh</p>
+        </div>
+
+        <!-- কুইক লিংকস -->
+        <div>
+            <h4 class="font-bold mb-4 text-amber-400">WHAT WE OFFER</h4>
+            <ul class="text-sm space-y-2 text-blue-200">
+                <li><a href="#" class="hover:text-white">The DoctorChamber Platform</a></li>
+                <li><a href="#" class="hover:text-white">Virtual Primary Care</a></li>
+                <li><a href="#" class="hover:text-white">Digital Behavioral Health</a></li>
+            </ul>
+        </div>
+
+        <!-- এবাউট আস -->
+        <div>
+            <h4 class="font-bold mb-4 text-amber-400">ABOUT US</h4>
+            <ul class="text-sm space-y-2 text-blue-200">
+                <li><a href="mailto:contact@uptotechsyl.com" class="hover:text-white">Contact Us</a></li>
+                <li><a href="#" class="hover:text-white">Leadership Team</a></li>
+                <li><a href="#" class="hover:text-white">Investor Relations</a></li>
+            </ul>
+        </div>
+
+        <!-- লিগ্যাল -->
+        <div>
+            <h4 class="font-bold mb-4 text-amber-400">POLICIES</h4>
+            <ul class="text-sm space-y-2 text-blue-200">
+                <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                <li><a href="#" class="hover:text-white">Terms of Use</a></li>
+                <li><a href="#" class="hover:text-white">Sitemap</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- সিকিউরিটি ব্যাজ (নিচে যুক্ত করা হয়েছে) -->
+    <div class="max-w-[1200px] mx-auto py-8 border-t border-blue-900 flex flex-wrap justify-center gap-8 text-blue-300">
+        <div class="flex items-center gap-2 text-sm"><i class="fa-solid fa-shield-halved text-amber-400"></i> HIPAA Compliant</div>
+        <div class="flex items-center gap-2 text-sm"><i class="fa-solid fa-certificate text-amber-400"></i> ISO Certified</div>
+        <div class="flex items-center gap-2 text-sm"><i class="fa-solid fa-lock text-amber-400"></i> Secure SSL</div>
+    </div>
+    
+    <div class="text-center text-xs text-amber-400 mt-8">
+        &copy; 2026 DoctorChamber. All rights reserved. | Powered by UpToTechSyl Digital Agency
+    </div>
+</footer>
+    <script src="script.js"></script>
+        <div id="mobileMenu" class="hidden lg:hidden fixed top-24 left-4 right-4 bg-[#050f33] border border-blue-900 p-6 rounded-2xl z-50 text-white">
+    <!-- Navigation Links -->
+    <a href="index.html" class="block py-2 hover:text-amber-400">Home</a>
+    <a href="customers.html" class="block py-2 hover:text-amber-400">Customers</a>
+    <a href="Resources.html" class="block py-2 hover:text-amber-400">Resources</a>
+    <a href="contact.html" class="block py-2 hover:text-amber-400">Contact Us</a>
+    
+    <!-- Services -->
+    <hr class="border-blue-800 my-2">
+    <a href="urgent-care.html" class="block py-2 hover:text-amber-400">Urgent Care</a>
+    <a href="mental-health.html" class="block py-2 hover:text-amber-400">Mental Health</a>
+    <a href="individuals.html" class="block py-2 hover:text-amber-400">Individuals</a>
+    <a href="employers.html" class="block py-2 hover:text-amber-400">Employers</a>
+    <!-- Auth & CTA -->
+    <hr class="border-blue-800 my-2">
+    <a href="login.html" class="block py-2 text-amber-400 font-bold">Login</a>
+    <a href="seeadoctor.html" class="block py-2 bg-amber-400 text-black font-bold text-center rounded-xl mt-2">See a Doctor</a>
+</div>
+<div id="my-cursor-ring" style="width: 50px; height: 50px; border: 2px solid #fbbf24; border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999999; transform: translate(-50%, -50%); transition: transform 0.1s ease-out;"></div>
+  <script>
+    const ringCount = 6;
+    const rings = [];
+
+    // ৬টি রিং তৈরি করা
+    for (let i = 0; i < ringCount; i++) {
+        const div = document.createElement('div');
+        div.className = 'cursor-ring';
+        // প্রতিটি রিংয়ের সাইজ সেট করা (৫০px থেকে শুরু করে কিছুটা ছোট হওয়া)
+        let size = 50 - (i * 6); 
+        div.style.width = size + 'px';
+        div.style.height = size + 'px';
+        document.body.appendChild(div);
+        rings.push(div);
+    }
+
+    // মাউস মুভমেন্টে রিংগুলো মুভ করা
+    document.addEventListener('mousemove', (e) => {
+        rings.forEach((ring, index) => {
+            // সামান্য ডিলে দিয়ে স্মুথ ট্রেইল তৈরি করা
+            setTimeout(() => {
+                ring.style.left = e.clientX + 'px';
+                ring.style.top = e.clientY + 'px';
+            }, index * 20); 
+        });
+    });
+</script>
+</body>
+</html>
+
+

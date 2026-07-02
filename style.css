@@ -1,0 +1,75 @@
+/* পুরো পেজের ডিফল্ট কার্সার সরানো */
+html, body {
+    cursor: none !important;
+}
+/* ব্রাউজারের অরিজিনাল কার্সার হাইড করা */
+html, body {
+    cursor: none !important;
+}
+
+/* কাস্টম রিং কার্সারের ডিজাইন */
+#my-cursor-ring {
+    width: 50px; /* এটি একটি বড় আকারের রিং */
+    height: 50px;
+    border: 2px solid rgba(0, 0, 0, 0.4); /* খুব পাতলা কালো রিং (ডার্ক থিমে সাদা ব্যবহার করুন)*/
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none; /* ক্লিকের কাজ করতে দিবে */
+    z-index: 999999999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s ease-out, border 0.2s, background-color 0.2s; /* হোভারের জন্য ট্রানজিশন */
+}
+
+/* যখন হোভার করা হবে */
+#my-cursor-ring.hovering {
+    width: 30px; /* আকার একই থাকবে */
+    height: 30px;
+    border: 1px solid white; /* রিং-এর বর্ডার সাদা হবে */
+    background-color: transparent; /* রিং-এর ভেতরের দিক ফাঁকা */
+}
+
+/* ৪. ডার্ক মোড সাপোর্ট */
+.dark {
+    color-scheme: dark;
+}
+.dark body {
+    background-color: #040918 !important;
+    color: white !important;
+}
+
+/* ৫. অন্যান্য কাস্টম ডিজাইন */
+.transition-all {
+    transition: all 0.3s ease-in-out;
+}
+
+/* বাটনের ওপর ডিফল্ট কার্সার যেন কোনোভাবেই না আসে */
+a, button, input, .cursor-pointer {
+    cursor: none !important;
+}
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.animate-scroll {
+    display: flex;
+    animation: scroll 20s linear infinite;
+    width: max-content;
+}
+
+/* মাউস নিলে অ্যানিমেশন থেমে যাবে */
+.animate-scroll:hover {
+    animation-play-state: paused;
+}
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+    @keyframes spin-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    
+    .animate-float { animation: float 6s ease-in-out infinite; }
+    .animate-float-delay { animation: float 6s ease-in-out infinite 2s; }
+    .animate-spin-slow { animation: spin-slow 20s linear infinite; }
+
+
+
+
