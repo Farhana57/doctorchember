@@ -21,17 +21,17 @@
         transition: background-color 0.4s ease, color 0.4s ease;
     }
 
-  
-    .dark body {
-        background-color: #1e293b; 
-        color: #f1f5f9; 
-    }
+  /* ৪. ডার্ক মোড সাপোর্ট */
+.dark {
+    color-scheme: dark;
+}
 
-    /* .dark 
-    .dark {
-        background-color: #1e293b;
-        color: #f1f5f9;
-    }
+.dark body {
+   
+    background-color: #1a1f2e !important; 
+    color: #e0e0e0 !important;
+}
+    
     /* মোবাইল ডিভাইসের জন্য প্যাডিং অ্যাডজাস্টমেন্ট */
     @media (max-width: 768px) {
         body {
