@@ -723,33 +723,7 @@
     <a href="seeadoctor.html" class="block py-2 bg-amber-400 text-black font-bold text-center rounded-xl mt-2">See a Doctor</a>
 </div>
 <div id="my-cursor-ring" style="width: 50px; height: 50px; border: 2px solid #fbbf24; border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999999; transform: translate(-50%, -50%); transition: transform 0.1s ease-out;"></div>
-  <script>
-    const ringCount = 6;
-    const rings = [];
-
-    // ৬টি রিং তৈরি করা
-    for (let i = 0; i < ringCount; i++) {
-        const div = document.createElement('div');
-        div.className = 'cursor-ring';
-        // প্রতিটি রিংয়ের সাইজ সেট করা (৫০px থেকে শুরু করে কিছুটা ছোট হওয়া)
-        let size = 50 - (i * 6); 
-        div.style.width = size + 'px';
-        div.style.height = size + 'px';
-        document.body.appendChild(div);
-        rings.push(div);
-    }
-
-    // মাউস মুভমেন্টে রিংগুলো মুভ করা
-    document.addEventListener('mousemove', (e) => {
-        rings.forEach((ring, index) => {
-            // সামান্য ডিলে দিয়ে স্মুথ ট্রেইল তৈরি করা
-            setTimeout(() => {
-                ring.style.left = e.clientX + 'px';
-                ring.style.top = e.clientY + 'px';
-            }, index * 20); 
-        });
-    });
-</script>
+  
 </body>
 </html>
 
