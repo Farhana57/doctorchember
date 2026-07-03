@@ -28,13 +28,15 @@ html, body {
     background-color: transparent;
 }
 
-/* ৪. ডার্ক মোড এবং বেসিক এলিমেন্ট */
+/* ৪. ডার্ক মোড সাপোর্ট */
 .dark {
     color-scheme: dark;
 }
+
 .dark body {
-    background-color: #040918 !important;
-    color: white !important;
+    
+    background-color: #1a1f2e !important; 
+    color: #e0e0e0 !important; 
 }
 
 a, button, input, .cursor-pointer {
