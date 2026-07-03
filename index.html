@@ -15,18 +15,22 @@
     }
 
     /* লাইট মোড (ডিফল্ট) */
-    body {
-        background-color: #ffffff;
-        color: #130685c9;
+     body {
+        background-color: #f8fafc; 
+        color: #1e3a8a; 
+        transition: background-color 0.4s ease, color 0.4s ease;
     }
 
-    /* ডার্ক মোড অ্যাক্টিভ হলে */
+  
     .dark body {
-        background-color: #050f33; /* আপনার পছন্দের গাঢ় নীল */
-        color: #ffffff;
+        background-color: #1e293b; 
+        color: #f1f5f9; 
     }
-        .dark {
-        color: rgb(4, 19, 156);
+
+    /* .dark 
+    .dark {
+        background-color: #1e293b;
+        color: #f1f5f9;
     }
     /* মোবাইল ডিভাইসের জন্য প্যাডিং অ্যাডজাস্টমেন্ট */
     @media (max-width: 768px) {
