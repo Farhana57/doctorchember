@@ -152,10 +152,10 @@
 </style>
          <section class="w-full py-12 md:py-20 px-6 overflow-hidden relative transition-colors duration-300">
     
-    <!-- ব্যাকগ্রাউন্ডের কার্ভ ডিজাইন: মোবাইলে হালকা নীল (bg-blue-400) এবং লার্জ স্ক্রিনে গাঢ় নীল (lg:bg-[#0a1540]) -->
+    <!-- ব্যাকগ্রাউন্ডের কার্ভ ডিজাইন -->
     <div class="absolute top-0 left-0 w-full lg:w-[40%] h-full bg-blue-400 lg:bg-[#0a1540] dark:bg-slate-950 rounded-r-[50px] lg:rounded-r-[100px] -z-10"></div>
 
-    <div class="max-w-[1200px] mx-auto flex flex-col-reverse lg:flex-row items-center gap-10 relative z-10">
+    <div class="max-w-[1200px] mx-auto flex flex-col-reverse lg:flex-row items-center gap-10">
         
         <!-- বাম পাশের টেক্সট কন্টেন্ট -->
         <div class="w-full lg:w-1/2 text-white text-center lg:text-left z-20">
@@ -169,7 +169,7 @@
                 Connect with our team <span>&gt;</span>
             </a>
         </div>
-    </div>
+
         <!-- ডান পাশের ইমেজ সেকশন -->
         <div class="w-full lg:w-1/2 flex justify-center items-center relative py-5 shrink-0 z-20">
             <!-- ব্যাকগ্রাউন্ড সার্কেল -->
@@ -177,9 +177,9 @@
                 <div class="w-[180px] h-[180px] md:w-[350px] md:h-[350px] border border-blue-400 dark:border-blue-800 rounded-full"></div>
             </div>
 
-            <!-- মূল ইমেজ -->
-            <div class="relative w-[200px] h-[200px] md:w-[320px] md:h-[320px] rounded-full border-4 border-amber-500 overflow-hidden shadow-2xl">
-                <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=500" class="w-full h-full object-cover" alt="Doctor">
+            <!-- মূল ইমেজ (Hover Zoom সহ) -->
+            <div class="relative w-[200px] h-[200px] md:w-[320px] md:h-[320px] rounded-full border-4 border-amber-500 overflow-hidden shadow-2xl transition-transform duration-500 hover:scale-110">
+                <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=500" class="w-full h-full object-cover transition-transform duration-500 hover:scale-125" alt="Doctor">
             </div>
         </div> 
     </div>
