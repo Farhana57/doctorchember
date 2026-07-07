@@ -43,29 +43,58 @@
 </head>
 <body class="bg-white dark:bg-[#030821] text-gray-900 dark:text-white transition-colors duration-300">
 
-    <!-- Header Section -->
-    <header class="fixed top-4 inset-x-4 z-50">
-        <div class="max-w-[1200px] mx-auto bg-[#08164bd8] border border-blue-800 rounded-[30px] shadow-2xl backdrop-blur-md px-6 py-4">
-            <div class="flex items-center justify-between gap-6 mb-4">
-                <a href="#" class="flex items-center text-white text-lg font-black tracking-tighter">doctor<span class="text-amber-400">chamber</span></a>
-                <div class="flex items-center gap-4">
-                    <button id="themeToggle" class="text-amber-400 hover:rotate-90 transition-transform"><i class="fa-solid fa-gear"></i></button>
-                    <button id="mobileMenuBtn" class="lg:hidden text-white text-xl"><i class="fa-solid fa-bars"></i></button>
-                </div>
+   <header class="fixed top-2 md:top-4 inset-x-2 md:inset-x-4 z-50">
+    <div class="max-w-[1200px] mx-auto bg-[#08164bd8] border border-blue-900/50 rounded-[20px] md:rounded-[30px] shadow-2xl backdrop-blur-md px-4 py-2 md:px-6 md:py-3">
+        <div class="flex items-center justify-between gap-4">
+            <a href="#" class="flex items-center text-white text-lg font-black tracking-tighter">
+    doctor<span class="text-amber-400">chamber</span>
+</a>
+            
+            <div class="relative hidden lg:block flex-1 max-w-sm">
+                <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-blue-400 text-xs"></i>
+                <input type="text" placeholder="What can we help you treat today?" class="w-full bg-blue-950 text-white rounded-full py-2 pl-10 pr-4 text-xs border border-blue-800 outline-none focus:border-amber-400 transition-colors">
             </div>
-            <nav class="border-t border-blue-800 pt-4 flex items-center gap-8 text-white font-bold text-xs uppercase">
-                <a href="index.html" class="hover:text-amber-400">Home</a>
-                <a href="resources.html" class="hover:text-amber-400">Resources</a>
-                <a href="contact.html" class="hover:text-amber-400">Contact Us</a>
-            </nav>
-        </div>
-    </header>
 
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="hidden lg:hidden fixed top-24 left-4 right-4 bg-[#050f33] border border-blue-900 p-6 rounded-2xl z-50 text-white shadow-2xl">
-        <a href="index.html" class="block py-2">Home</a>
-        <a href="resources.html" class="block py-2">Resources</a>
+            <div class="flex items-center gap-4">
+                <a href="login.html" class="text-white text-xs font-bold uppercase hover:text-amber-400 transition-colors">Log in ▾</a>
+                <button id="themeToggle" class="text-amber-400 hover:rotate-90 transition-transform duration-300"><i class="fa-solid fa-gear"></i></button>
+                <a href="seeadoctor.html" class="bg-amber-400 text-black px-5 py-2 rounded-full font-bold text-xs uppercase hover:bg-amber-500 transition-all">See a doctor</a>
+                <button id="mobileMenuBtn" class="lg:hidden text-white text-xl"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+
+        <nav id="mobileMenu" class="hidden lg:flex flex-col lg:flex-row justify-start gap-2 lg:gap-8 text-white font-bold text-[10px] uppercase mt-4 pl-2 bg-[#08164bd8] lg:bg-transparent p-4 lg:p-0 rounded-2xl lg:rounded-none">
+    
+    <!-- What We Offer Dropdown -->
+    <div class="group relative">
+        <a href="#" class="hover:text-amber-400 transition-colors py-2 block">What We Offer ▾</a>
+        <div class="lg:absolute left-0 top-full lg:pt-2 opacity-100 lg:opacity-0 lg:invisible group-hover:opacity-100 lg:group-hover:visible transition-all duration-300">
+            <div class="bg-[#1f166ede] border border-amber-500 p-4 w-full lg:w-40 rounded-2xl shadow-xl">
+                <a href="urgent-care.html" class="block py-2 hover:text-amber-400 transition">Urgent Care</a>
+                <a href="mental-health.html" class="block py-2 hover:text-amber-400 transition">Mental Health</a>
+            </div>
+        </div>
     </div>
+
+    <!-- Who We Serve Dropdown -->
+    <div class="group relative">
+        <a href="#" class="hover:text-amber-400 transition-colors py-2 block">Who We Serve ▾</a>
+        <div class="lg:absolute left-0 top-full lg:pt-2 opacity-100 lg:opacity-0 lg:invisible group-hover:opacity-100 lg:group-hover:visible transition-all duration-300">
+            <div class="bg-[#1f166ede] border border-amber-500 p-4 w-full lg:w-40 rounded-2xl shadow-xl">
+                <a href="individuals.html" class="block py-2 hover:text-amber-400 transition">Individuals</a>
+                <a href="employers.html" class="block py-2 hover:text-amber-400 transition">Employers</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fixed Links -->
+    <a href="index.html" class="hover:text-amber-400 transition py-2 block">Home</a>
+    <a href="customers.html" class="hover:text-amber-400 transition py-2 block">Customers</a>
+    <a href="resources.html" class="hover:text-amber-400 transition py-2 block">Resources</a>
+    <a href="contact.html" class="hover:text-amber-400 transition py-2 block">Contact Us</a>
+</nav>
+    </div>
+</header>
 
    <!-- Main Content -->
     <main class="bg-white dark:bg-[#030821] transition-colors duration-300 py-16 md:py-24 px-4">
