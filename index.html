@@ -156,54 +156,40 @@
     @keyframes marquee { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
     .animate-marquee { animation: marquee 20s linear infinite; }
 </style>
-         <section class="relative w-full py-12 md:py-20 px-6 overflow-hidden transition-colors duration-300">
-    
-    <!-- ব্যাকগ্রাউন্ডের কার্ভ ডিজাইন: এটি পুরো সেকশনের ব্যাকগ্রাউন্ড হিসেবে থাকবে -->
-    <div class="absolute top-0 left-0 w-full h-full -z-10 flex">
-        <!-- গাঢ় নীল অংশ -->
-        <div class="w-[40%] bg-[#0a1540] dark:bg-slate-950 rounded-r-[50px] lg:rounded-r-[100px]"></div>
-        <!-- হালকা নীল অংশ (বাকি অংশ) -->
-        <div class="flex-1 bg-blue-500"></div>
-    </div>
-
-    <!-- কন্টেন্ট -->
-    <div class="max-w-[1200px] mx-auto flex flex-col-reverse lg:flex-row items-center gap-10">
+         <section class="w-full py-16 px-6 relative">
+    <!-- Main Container -->
+    <div class="max-w-[1100px] mx-auto bg-[#0a1540] rounded-[40px] p-8 md:p-12 relative flex flex-col lg:flex-row items-center overflow-visible">
         
-        <!-- বাম পাশের টেক্সট কন্টেন্ট -->
-        <div class="w-full lg:w-1/2 text-white text-center lg:text-left z-20">
-            <h1 class="text-3xl md:text-5xl font-extrabold mb-6 leading-tight">
+        <!-- Left Text Side -->
+        <div class="w-full lg:w-3/5 text-white z-10">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
                 Your partner in <br> 
                 <span class="text-[#FFB900]">care delivery</span>
             </h1>
-            <p class="text-blue-100 dark:text-gray-400 text-base md:text-lg mb-8 max-w-md mx-auto lg:mx-0">One platform for care that's accessible, affordable, and effective.</p>
-            
-            <a href="contact.html" class="bg-[#FFB900] text-black px-8 py-4 rounded-xl font-bold flex items-center justify-center lg:justify-start gap-2 hover:bg-amber-500 transition-all w-fit mx-auto lg:mx-0">
-                Connect with our team <span>&gt;</span>
+            <p class="text-blue-100 text-lg mb-8 max-w-lg">One platform for care that's accessible, affordable, and effective.</p>
+            <a href="#" class="bg-[#FFB900] text-black px-8 py-3 rounded-full font-bold inline-flex items-center gap-2 hover:scale-105 transition-transform">
+                Connect with our team →
             </a>
         </div>
-      <!-- ডান পাশের ইমেজ সেকশন -->
-<div class="w-full lg:w-1/2 flex justify-center items-center relative py-10 shrink-0 z-20">
-    
-    <!-- ঘোরার জন্য অ্যানিমেটেড বৃত্তের কন্টেইনার (এটি বড় বৃত্তের চারপাশ দিয়ে ঘুরবে) -->
-    <div class="relative w-[300px] h-[300px] md:w-[400px] md:h-[400px] flex items-center justify-center animate-spin-slow">
-        
-        <!-- ছোট বৃত্তগুলো যা ঘুরছে -->
-        <div class="absolute -top-5 left-1/2 -ml-8 w-16 h-16 rounded-full border-2 border-amber-500 overflow-hidden bg-white">
-            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=200" class="w-full h-full object-cover">
-        </div>
-        <div class="absolute bottom-5 left-0 w-16 h-16 rounded-full border-2 border-amber-500 overflow-hidden bg-white">
-            <img src="https://images.unsplash.com/photo-1551601651-2a855581a187?w=200" class="w-full h-full object-cover">
-        </div>
-        <div class="absolute bottom-5 right-0 w-16 h-16 rounded-full border-2 border-amber-500 overflow-hidden bg-white">
-            <img src="https://images.unsplash.com/photo-1584467735824-34c9c614b1cc?w=200" class="w-full h-full object-cover">
-        </div>
 
-        <!-- মূল বড় বৃত্ত (ইমেজ জুম হোভার সহ) -->
-        <div class="w-[200px] h-[200px] md:w-[280px] md:h-[280px] rounded-full border-4 border-amber-500 overflow-hidden shadow-2xl transition-transform duration-500 hover:scale-105">
-            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=500" class="w-full h-full object-cover transition-transform duration-500 hover:scale-125" alt="Main Doctor">
+        <!-- Right Image Side (Overlay Card) -->
+        <div class="w-full lg:w-[400px] bg-[#0c1a4d] border border-blue-800 rounded-[30px] p-6 mt-10 lg:mt-0 lg:absolute lg:-right-10 shadow-2xl z-20">
+            <span class="bg-[#FFB900] text-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Convenient</span>
+            
+            <!-- Doctor Circle -->
+            <div class="mt-6 flex justify-center">
+                <div class="w-48 h-48 rounded-full overflow-hidden border-4 border-blue-900">
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=500" alt="Doctor" class="w-full h-full object-cover">
+                </div>
+            </div>
+
+            <!-- Icons -->
+            <div class="flex justify-center gap-4 mt-6">
+                <div class="w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center text-white">🎤</div>
+                <div class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center text-white">⏸</div>
+            </div>
         </div>
     </div>
-</div>
 </section>
       <div class="py-10 border-y border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-[#050f33]/50 overflow-hidden">
     <p class="text-center text-gray-500 dark:text-blue-300 font-medium mb-8">
