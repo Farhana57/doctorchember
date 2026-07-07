@@ -1,162 +1,90 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DoctorChamber Professional Design</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-   <style>
-    /* বেসিক সেটিংস */
-    body {
-        cursor: none !important;
-        transition: background-color 0.4s ease, color 0.4s ease;
-        margin: 0;
-        min-height: 100vh;
-    }
-
-    /* লাইট মোড ডিফল্ট */
-    body {
-        background-color: #ffffff;
-        color: #1e3a8a; /* গাঢ় নীল টেক্সট */
-    }
-
-    /* ডার্ক মোড */
-    .dark body {
-        background-color: #030821 !important; /* আপনার মূল গাঢ় নীল থিম */
-        color: #ffffff !important;
-    }
-
-    /* মোবাইল প্যাডিং */
-    @media (max-width: 768px) {
-        body {
-            padding-top: 120px; /* হেডার ফিক্সড থাকলে জায়গা ছাড়ার জন্য */
-        }
-    }
-
-    /* কাস্টম কার্সার রিং */
-    .cursor-ring {
-        position: fixed;
-        border: 2px solid #fbbf24;
-        border-radius: 50%;
-        pointer-events: none;
-        z-index: 99999;
-        transition: transform 0.1s ease;
-        transform: translate(-50%, -50%);
-    }
-
-    /* কার্ড অ্যানিমেশন */
-    @keyframes slideUp {
-        from { opacity: 0; transform: translateY(30px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-    .animate-card {
-        animation: slideUp 0.8s ease-out forwards;
-    }
-</style>
     <script>
-  tailwind.config = {
-    darkMode: 'class',
-    theme: {
-      extend: {
-        colors: {
-          clifford: '#da373d',
+        tailwind.config = {
+            darkMode: 'class',
         }
-      }
-    }
-  }
-</script>
+    </script>
+    <style>
+        body { cursor: none !important; transition: background-color 0.4s, color 0.4s; min-height: 100vh; }
+        .cursor-ring { position: fixed; border: 2px solid #fbbf24; border-radius: 50%; pointer-events: none; z-index: 999999; transform: translate(-50%, -50%); transition: transform 0.05s ease-out; }
+        @media (max-width: 768px) { body { padding-top: 80px; } }
+    </style>
 </head>
-    <body class="bg-white dark:bg-[#031b64] transition-colors duration-300">
-      <!-- পুরো হেডার এবং নেভবারকে একটি ব্লকের ভেতরে সাজানো হয়েছে -->
-<header class="fixed top-4 inset-x-4 z-50">
-    <div class="max-w-[1200px] mx-auto bg-[#08164bd8] border border-blue-800 rounded-[30px] shadow-2xl backdrop-blur-md px-6 py-4">
-        
-        <!-- Top Row: Logo, Search, Auth -->
-        <div class="flex items-center justify-between gap-6 mb-4">
-            <a href="#" class="flex items-center text-white text-lg font-black tracking-tighter">
-                doctor<span class="text-amber-400">chamber</span>
-            </a>
-            
-            <div class="relative hidden lg:block flex-1 max-w-sm">
-                <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-blue-400 text-xs"></i>
-                <input type="text" placeholder="What can we help you treat today?" class="w-full bg-blue-950 text-white rounded-full py-2 pl-10 pr-4 text-xs border border-blue-800 outline-none focus:border-amber-400 transition-colors">
-            </div>
+<body class="bg-white dark:bg-[#030821] text-gray-900 dark:text-white">
 
-            <div class="flex items-center gap-4">
-                <a href="login.html" class="text-white text-xs font-bold uppercase hover:text-amber-400 transition-colors">Log in ▾</a>
-                <button id="themeToggle" class="text-amber-400 hover:rotate-90 transition-transform duration-300"><i class="fa-solid fa-gear"></i></button>
-                <a href="seeadoctor.html" class="bg-amber-400 text-black px-5 py-2 rounded-full font-bold text-xs uppercase hover:bg-amber-500 transition-all">See a doctor</a>
-                <button id="mobileMenuBtn" class="lg:hidden text-white text-xl"><i class="fa-solid fa-bars"></i></button>
-            </div>
-        </div>
-
-        <!-- Bottom Row: Nav Bar (হেডারের ভেতরেই কিন্তু আলাদা ডিভ) -->
-        <nav class="border-t border-blue-800 pt-4 flex items-center gap-8 text-white font-bold text-xs uppercase">
-            <!-- What We Offer -->
-            <div class="group relative">
-                <a href="#" class="hover:text-amber-400 transition-colors">What We Offer ▾</a>
-                <div class="absolute left-0 top-full pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                    <div class="bg-[#1f166e] border border-amber-500 p-4 w-40 rounded-2xl shadow-xl">
-                        <a href="urgent-care.html" class="block py-2 hover:text-amber-400">Urgent Care</a>
-                        <a href="mental-health.html" class="block py-2 hover:text-amber-400">Mental Health</a>
-                    </div>
+    <!-- Header -->
+    <header class="fixed top-4 inset-x-4 z-50">
+        <div class="max-w-[1200px] mx-auto bg-[#08164bd8] border border-blue-800 rounded-[30px] shadow-2xl backdrop-blur-md px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="#" class="text-white text-lg font-black">doctor<span class="text-amber-400">chamber</span></a>
+                <div class="flex items-center gap-4">
+                    <button id="themeToggle" class="text-amber-400 text-xl"><i class="fa-solid fa-moon"></i></button>
+                    <button id="mobileMenuBtn" class="lg:hidden text-white text-xl"><i class="fa-solid fa-bars"></i></button>
                 </div>
             </div>
+        </div>
+    </header>
 
-            <!-- Links -->
-            <a href="index.html" class="hover:text-amber-400 transition">Home</a>
-            <a href="customers.html" class="hover:text-amber-400 transition">Customers</a>
-            <a href="resources.html" class="hover:text-amber-400 transition">Resources</a>
-            <a href="contact.html" class="hover:text-amber-400 transition">Contact Us</a>
-        </nav>
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden lg:hidden fixed top-24 left-4 right-4 bg-[#050f33] border border-blue-900 p-6 rounded-2xl z-40 text-white">
+        <a href="index.html" class="block py-2 hover:text-amber-400">Home</a>
+        <a href="resources.html" class="block py-2 hover:text-amber-400">Resources</a>
+        <a href="contact.html" class="block py-2 hover:text-amber-400">Contact</a>
     </div>
-</header>
-   <main class="bg-white dark:bg-[#030821] transition-colors duration-300 py-16 md:py-24 px-4">
-    <div class="max-w-[1100px] mx-auto">
+
+    <!-- Main Content -->
+    <main class="pt-32 px-4 pb-20">
+        <div class="max-w-[1100px] mx-auto text-center mb-16">
+            <h1 class="text-4xl font-bold mb-4">Resources & Insights</h1>
+            <p class="text-gray-600 dark:text-blue-200">Expert medical advice and wellness guides.</p>
+        </div>
         
-        <!-- পেজ টাইটেল -->
-        <div class="text-center mb-16 px-2">
-            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Resources & Insights</h1>
-            <p class="text-gray-600 dark:text-blue-200">Expert medical advice and wellness guides for your better health.</p>
-        </div>
-
-        <!-- রিসোর্স কার্ড গ্রিড -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            
-            <!-- কার্ড ১ -->
-            <div class="bg-gray-100 dark:bg-[#0a1540] p-8 rounded-2xl border border-gray-300 dark:border-blue-800 shadow-lg hover:shadow-2xl hover:border-blue-500 dark:hover:border-amber-500 transition-all duration-300 group">
-                <div class="mb-6 text-amber-500 text-4xl">
-                    <i class="fa-solid fa-stethoscope"></i>
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Patient Health Guide</h3>
-                <p class="text-sm text-gray-600 dark:text-blue-200 mb-6">Learn how to prepare for your virtual consultation and manage your health records effectively.</p>
-                <a href="seeadoctor.html" class="text-amber-600 dark:text-amber-500 font-bold hover:underline">Read More →</a>
-            </div>
-
-            <!-- কার্ড ২ -->
-            <div class="bg-gray-100 dark:bg-[#0a1540] p-8 rounded-2xl border border-gray-300 dark:border-blue-800 shadow-lg hover:shadow-2xl hover:border-blue-500 dark:hover:border-amber-500 transition-all duration-300 group">
-                <div class="mb-6 text-amber-500 text-4xl">
-                    <i class="fa-solid fa-apple-whole"></i>
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Wellness & Nutrition</h3>
-                <p class="text-sm text-gray-600 dark:text-blue-200 mb-6">Daily habits and nutritional advice to keep you energetic and healthy throughout the year.</p>
-                <a href="urgent-care.html" class="text-amber-600 dark:text-amber-500 font-bold hover:underline">Read More →</a>
-            </div>
-
-            <!-- কার্ড ৩ -->
-            <div class="bg-gray-100 dark:bg-[#0a1540] p-8 rounded-2xl border border-gray-300 dark:border-blue-800 shadow-lg hover:shadow-2xl hover:border-blue-500 dark:hover:border-amber-500 transition-all duration-300 group">
-                <div class="mb-6 text-amber-500 text-4xl">
-                    <i class="fa-solid fa-brain"></i>
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Mental Health Awareness</h3>
-                <p class="text-sm text-gray-600 dark:text-blue-200 mb-6">Expert insights on managing stress, anxiety, and maintaining positive mental well-being.</p>
-                <a href="mental-health.html" class="text-amber-600 dark:text-amber-500 font-bold hover:underline">Read More →</a>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-[1100px] mx-auto">
+            <!-- Example Card -->
+            <div class="bg-gray-100 dark:bg-[#0a1540] p-8 rounded-2xl border border-gray-300 dark:border-blue-800">
+                <h3 class="text-xl font-bold mb-3">Patient Health Guide</h3>
+                <p class="text-sm text-gray-600 dark:text-blue-200">Expert medical advice for your better health.</p>
             </div>
         </div>
-    </div>
-</main>
+    </main>
+
+    <script>
+        // Theme Toggle
+        document.getElementById('themeToggle').addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+        });
+
+        // Mobile Menu Toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        });
+
+        // Custom Cursor
+        const rings = [];
+        for (let i = 0; i < 5; i++) {
+            const div = document.createElement('div');
+            div.className = 'cursor-ring';
+            div.style.width = (40 - i * 5) + 'px';
+            div.style.height = (40 - i * 5) + 'px';
+            document.body.appendChild(div);
+            rings.push(div);
+        }
+        document.addEventListener('mousemove', (e) => {
+            rings.forEach((ring, index) => {
+                setTimeout(() => {
+                    ring.style.left = e.clientX + 'px';
+                    ring.style.top = e.clientY + 'px';
+                }, index * 20);
+            });
+        });
+    </script>
 <!-- Footer Section -->
 <footer class="bg-[#030821] pt-16 pb-8 px-6 text-white border-t border-blue-900">
     <div class="max-w-[1200px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
