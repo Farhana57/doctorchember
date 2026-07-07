@@ -69,12 +69,16 @@
 </script>
 </head>
     <body class="bg-white dark:bg-[#031b64] transition-colors duration-300">
-      <header class="fixed top-4 inset-x-4 z-50">
-    <div class="max-w-[1200px] mx-auto bg-[#08164bd8] border border-blue-800 rounded-[30px] shadow-2xl backdrop-blur-md px-6 py-3">
-        <div class="flex items-center justify-between gap-6">
+      <!-- পুরো হেডার এবং নেভবারকে একটি ব্লকের ভেতরে সাজানো হয়েছে -->
+<header class="fixed top-4 inset-x-4 z-50">
+    <div class="max-w-[1200px] mx-auto bg-[#08164bd8] border border-blue-800 rounded-[30px] shadow-2xl backdrop-blur-md px-6 py-4">
+        
+        <!-- Top Row: Logo, Search, Auth -->
+        <div class="flex items-center justify-between gap-6 mb-4">
             <a href="#" class="flex items-center text-white text-lg font-black tracking-tighter">
-          doctor<span class="text-amber-400">chamber</span>
-        </a>
+                doctor<span class="text-amber-400">chamber</span>
+            </a>
+            
             <div class="relative hidden lg:block flex-1 max-w-sm">
                 <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-blue-400 text-xs"></i>
                 <input type="text" placeholder="What can we help you treat today?" class="w-full bg-blue-950 text-white rounded-full py-2 pl-10 pr-4 text-xs border border-blue-800 outline-none focus:border-amber-400 transition-colors">
@@ -88,42 +92,25 @@
             </div>
         </div>
 
-      <!-- Nav Bar (Flex ব্যবহার করে সাজানো হয়েছে) -->
-<nav class="w-full bg-[#030821] py-6 border-b border-gray-700/50">
-    <div class="max-w-[1200px] mx-auto px-6 flex items-center gap-8 text-white font-bold text-xs uppercase">
-        
-        <!-- What We Offer Dropdown -->
-        <div class="group relative">
-            <a href="#" class="hover:text-amber-400 transition-colors">What We Offer ▾</a>
-            <!-- Dropdown Menu -->
-            <div class="absolute left-0 top-full pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                <div class="bg-[#1f166e] border border-amber-500 p-4 w-40 rounded-2xl shadow-xl">
-                    <a href="urgent-care.html" class="block py-2 hover:text-amber-400 transition">Urgent Care</a>
-                    <a href="mental-health.html" class="block py-2 hover:text-amber-400 transition">Mental Health</a>
+        <!-- Bottom Row: Nav Bar (হেডারের ভেতরেই কিন্তু আলাদা ডিভ) -->
+        <nav class="border-t border-blue-800 pt-4 flex items-center gap-8 text-white font-bold text-xs uppercase">
+            <!-- What We Offer -->
+            <div class="group relative">
+                <a href="#" class="hover:text-amber-400 transition-colors">What We Offer ▾</a>
+                <div class="absolute left-0 top-full pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                    <div class="bg-[#1f166e] border border-amber-500 p-4 w-40 rounded-2xl shadow-xl">
+                        <a href="urgent-care.html" class="block py-2 hover:text-amber-400">Urgent Care</a>
+                        <a href="mental-health.html" class="block py-2 hover:text-amber-400">Mental Health</a>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Who We Serve Dropdown -->
-        <div class="group relative">
-            <a href="#" class="hover:text-amber-400 transition-colors">Who We Serve ▾</a>
-            <!-- Dropdown Menu -->
-            <div class="absolute left-0 top-full pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                <div class="bg-[#1f166e] border border-amber-500 p-4 w-40 rounded-2xl shadow-xl">
-                    <a href="individuals.html" class="block py-2 hover:text-amber-400 transition">Individuals</a>
-                    <a href="employers.html" class="block py-2 hover:text-amber-400 transition">Employers</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Fixed Links -->
-        <a href="index.html" class="hover:text-amber-400 transition">Home</a>
-        <a href="customers.html" class="hover:text-amber-400 transition">Customers</a>
-        <a href="resources.html" class="hover:text-amber-400 transition">Resources</a>
-        <a href="contact.html" class="hover:text-amber-400 transition">Contact Us</a>
-        
-    </div>
-</nav>
+            <!-- Links -->
+            <a href="index.html" class="hover:text-amber-400 transition">Home</a>
+            <a href="customers.html" class="hover:text-amber-400 transition">Customers</a>
+            <a href="resources.html" class="hover:text-amber-400 transition">Resources</a>
+            <a href="contact.html" class="hover:text-amber-400 transition">Contact Us</a>
+        </nav>
     </div>
 </header>
    <main class="bg-white dark:bg-[#030821] transition-colors duration-300 py-16 md:py-24 px-4">
