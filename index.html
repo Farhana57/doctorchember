@@ -150,11 +150,17 @@
     @keyframes marquee { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
     .animate-marquee { animation: marquee 20s linear infinite; }
 </style>
-         <section class="w-full py-12 md:py-20 px-6 overflow-hidden relative transition-colors duration-300">
+         <section class="relative w-full py-12 md:py-20 px-6 overflow-hidden transition-colors duration-300">
     
-    <!-- ব্যাকগ্রাউন্ডের কার্ভ ডিজাইন -->
-    <div class="absolute top-0 left-0 w-full lg:w-[40%] h-full bg-blue-400 lg:bg-blue-400 dark:bg-slate-950 rounded-r-[50px] lg:rounded-r-[100px] -z-10"></div>
+    <!-- ব্যাকগ্রাউন্ডের কার্ভ ডিজাইন: এটি পুরো সেকশনের ব্যাকগ্রাউন্ড হিসেবে থাকবে -->
+    <div class="absolute top-0 left-0 w-full h-full -z-10 flex">
+        <!-- গাঢ় নীল অংশ -->
+        <div class="w-[40%] bg-[#0a1540] dark:bg-slate-950 rounded-r-[50px] lg:rounded-r-[100px]"></div>
+        <!-- হালকা নীল অংশ (বাকি অংশ) -->
+        <div class="flex-1 bg-blue-500"></div>
+    </div>
 
+    <!-- কন্টেন্ট -->
     <div class="max-w-[1200px] mx-auto flex flex-col-reverse lg:flex-row items-center gap-10">
         
         <!-- বাম পাশের টেক্সট কন্টেন্ট -->
@@ -169,20 +175,25 @@
                 Connect with our team <span>&gt;</span>
             </a>
         </div>
-
-        <!-- ডান পাশের ইমেজ সেকশন -->
-        <div class="w-full lg:w-1/2 flex justify-center items-center relative py-5 shrink-0 z-20">
-            <!-- ব্যাকগ্রাউন্ড সার্কেল -->
-            <div class="absolute w-[250px] h-[250px] md:w-[450px] md:h-[450px] border border-amber-500 rounded-full flex items-center justify-center opacity-30 animate-spin-slow">
-                <div class="w-[180px] h-[180px] md:w-[350px] md:h-[350px] border border-blue-400 dark:border-blue-800 rounded-full"></div>
-            </div>
-
-            <!-- মূল ইমেজ (Hover Zoom সহ) -->
-            <div class="relative w-[200px] h-[200px] md:w-[320px] md:h-[320px] rounded-full border-4 border-amber-500 overflow-hidden shadow-2xl transition-transform duration-500 hover:scale-110">
-                <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=500" class="w-full h-full object-cover transition-transform duration-500 hover:scale-125" alt="Doctor">
-            </div>
-        </div> 
+       <!-- ডান পাশের ইমেজ সেকশন: ৩টি বৃত্ত -->
+<div class="w-full lg:w-1/2 grid grid-cols-1 md:grid-cols-3 gap-4 justify-items-center items-center py-5 z-20">
+    
+    <!-- ইমেজ ১ -->
+    <div class="w-[150px] h-[150px] md:w-[180px] md:h-[180px] rounded-full border-4 border-amber-500 overflow-hidden shadow-2xl transition-transform duration-500 hover:scale-110 cursor-pointer">
+        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=500" class="w-full h-full object-cover transition-transform duration-500 hover:scale-125" alt="Doctor 1">
     </div>
+
+    <!-- ইমেজ ২ -->
+    <div class="w-[150px] h-[150px] md:w-[180px] md:h-[180px] rounded-full border-4 border-amber-500 overflow-hidden shadow-2xl transition-transform duration-500 hover:scale-110 cursor-pointer">
+        <img src="https://images.unsplash.com/photo-1551601651-2a855581a187?w=500" class="w-full h-full object-cover transition-transform duration-500 hover:scale-125" alt="Doctor 2">
+    </div>
+
+    <!-- ইমেজ ৩ -->
+    <div class="w-[150px] h-[150px] md:w-[180px] md:h-[180px] rounded-full border-4 border-amber-500 overflow-hidden shadow-2xl transition-transform duration-500 hover:scale-110 cursor-pointer">
+        <img src="https://images.unsplash.com/photo-1584467735824-34c9c614b1cc?w=500" class="w-full h-full object-cover transition-transform duration-500 hover:scale-125" alt="Doctor 3">
+    </div>
+
+</div>
 </section>
       <div class="py-10 border-y border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-[#050f33]/50 overflow-hidden">
     <p class="text-center text-gray-500 dark:text-blue-300 font-medium mb-8">
