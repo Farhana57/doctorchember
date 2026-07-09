@@ -116,28 +116,44 @@
 </header>
      <body class="bg-white dark:bg-[#031b64] text-black dark:text-white transition-colors duration-300">
 
-    <main class="pt-24 pb-20 px-6">
-        <div class="max-w-[1000px] mx-auto text-center">
-            <h1 class="text-3xl md:text-4xl font-bold mb-6">Choose How You Want to See a Doctor</h1>
-            <p class="text-gray-600 dark:text-blue-200 mb-12 max-w-2xl mx-auto">Connect with our top-rated medical professionals from the comfort of your home. Select the service that fits your needs.</p>
+    <main class="pt-24 md:pt-32 pb-20 px-6">
+    <div class="max-w-[1000px] mx-auto text-center">
+        <!-- Title Section -->
+        <h1 class="text-3xl md:text-4xl font-bold mb-6 text-black dark:text-white">
+            Choose How You Want to See a Doctor
+        </h1>
+        <p class="text-gray-600 dark:text-blue-200 mb-12 max-w-2xl mx-auto text-lg">
+            Connect with our top-rated medical professionals from the comfort of your home. Select the service that fits your needs.
+        </p>
 
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-gray-200 dark:bg-[#0a1540] p-8 rounded-3xl border border-blue-800 dark:border-amber-500 hover:border-blue-500 transition-all shadow-xl">
-                    <i class="fa-solid fa-video text-4xl text-amber-400 mb-6"></i>
-                    <h3 class="text-2xl font-bold mb-4">Video Consultation</h3>
-                    <p class="text-gray-600 dark:text-blue-200 mb-8">Get face-to-face medical advice via secure video call. Perfect for non-emergency issues.</p>
-                    <button class="w-full bg-amber-400 text-black font-bold py-3 rounded-xl hover:bg-amber-500">Book Video Call</button>
-                </div>
+        <!-- Service Cards Grid -->
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Video Consultation Card -->
+            <div class="bg-gray-200 dark:bg-[#0a1540] p-8 rounded-3xl border border-blue-800 dark:border-amber-500 hover:border-blue-500 transition-all duration-300 shadow-xl hover:-translate-y-2">
+                <i class="fa-solid fa-video text-4xl text-amber-400 mb-6"></i>
+                <h3 class="text-2xl font-bold mb-4 text-black dark:text-white">Video Consultation</h3>
+                <p class="text-gray-600 dark:text-blue-200 mb-8">
+                    Get face-to-face medical advice via secure video call. Perfect for non-emergency issues.
+                </p>
+                <button class="w-full bg-amber-400 text-black font-bold py-3 rounded-xl hover:bg-amber-500 transition-colors shadow-lg shadow-amber-500/20">
+                    Book Video Call
+                </button>
+            </div>
 
-                <div class="bg-gray-200 dark:bg-[#0a1540] p-8 rounded-3xl border border-blue-800 dark:border-amber-500 hover:border-blue-500 transition-all shadow-xl">
-                    <i class="fa-solid fa-comments text-4xl text-amber-400 mb-6"></i>
-                    <h3 class="text-2xl font-bold mb-4">Live Chat</h3>
-                    <p class="text-gray-600 dark:text-blue-200 mb-8">Prefer to text? Chat with our doctors instantly to discuss your symptoms and health concerns.</p>
-                    <button class="w-full bg-amber-400 text-black font-bold py-3 rounded-xl hover:bg-amber-500">Start Live Chat</button>
-                </div>
+            <!-- Live Chat Card -->
+            <div class="bg-gray-200 dark:bg-[#0a1540] p-8 rounded-3xl border border-blue-800 dark:border-amber-500 hover:border-blue-500 transition-all duration-300 shadow-xl hover:-translate-y-2">
+                <i class="fa-solid fa-comments text-4xl text-amber-400 mb-6"></i>
+                <h3 class="text-2xl font-bold mb-4 text-black dark:text-white">Live Chat</h3>
+                <p class="text-gray-600 dark:text-blue-200 mb-8">
+                    Prefer to text? Chat with our doctors instantly to discuss your symptoms and health concerns.
+                </p>
+                <button class="w-full bg-amber-400 text-black font-bold py-3 rounded-xl hover:bg-amber-500 transition-colors shadow-lg shadow-amber-500/20">
+                    Start Live Chat
+                </button>
             </div>
         </div>
-    </main>
+    </div>
+</main>
      <!-- Footer Section -->
 <footer class="bg-[#030821] pt-16 pb-8 px-6 text-white border-t border-blue-900">
     <div class="max-w-[1200px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
